@@ -1,19 +1,16 @@
 // src/components/Navbar.jsx
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom'; 
+import { Link, useLocation, useNavigate } from 'react-router-dom'; // 导入 useNavigate
 
 function Navbar() {
-  const location = useLocation(); 
-
-
+  const location = useLocation();
+  const navigate = useNavigate(); 
   const scrollToSection = (event, sectionId) => {
-    event.preventDefault(); 
+    event.preventDefault();
     const section = document.getElementById(sectionId);
     if (section) {
-
-      const navbarHeight = 80; 
+      const navbarHeight = document.querySelector('nav')?.offsetHeight || 80; 
       const sectionTop = section.getBoundingClientRect().top + window.scrollY - navbarHeight;
-
       window.scrollTo({
         top: sectionTop,
         behavior: 'smooth',
@@ -21,43 +18,59 @@ function Navbar() {
     }
   };
 
-    const handleNavClick = (event, href) => {
-    if (href.startsWith('#') && location.pathname === '/') {
-      scrollToSection(event, href.substring(1));
+  const handleNavClick = (event, href) => {
+    const isHomePage = location.pathname === '/';
+    const isAnchorLink = href.startsWith('#');
+    const sectionId = isAnchorLink ? href.substring(1) : null;
+
+    if (isAnchorLink) {
+      event.preventDefault(); // 阻止所有锚点链接的默认行为
+      if (isHomePage && sectionId) {
+        scrollToSection(event, sectionId);
+      } else if (sectionId) {
+        // 如果不在首页，但目标是锚点，先导航到首页，然后尝试滚动
+        // 使用 state 来传递滚动目标，在 HomePage 中用 useEffect 来处理
+        navigate(`/#${sectionId}`);
+      }
     }
-    // 如果是普通的路由链接 (如 /dance)，则正常跳转
-    // 如果是锚点链接但不在首页，Link to="/#about" 会先跳到首页，然后浏览器会尝试定位（可能不平滑）
-    // 这是一个可以后续优化的地方
+    // 对于非锚点链接 (如 /dance, /art)，Link 组件会正常处理路由跳转
   };
 
+  const navItems = [
+    { name: 'Home', href: '#home', isExternal: false },
+    { name: 'About', href: '#about', isExternal: false },
+    { name: 'Experience', href: '#experiences', isExternal: false }, 
+    { name: 'Dance', href: '/dance', isExternal: false },
+    { name: 'Art', href: '/art', isExternal: false },
+    { name: 'Speech', href: '/speeches', isExternal: false },
+  ];
+
   return (
-    <nav className="bg-card text-card-foreground shadow-md py-4 sticky top-0 z-50"> {/* 添加 sticky top-0 z-50 使其固定 */}
+    <nav className="bg-card/80 backdrop-blur-md text-card-foreground shadow-sm py-3 sticky top-0 z-50 transition-all duration-300">
       <div className="container mx-auto flex justify-between items-center px-4">
-        <Link 
-          to="/" 
-          onClick={(e) => handleNavClick(e, '#home')} 
-          className="text-2xl font-bold text-primary hover:text-primary/80"
+        <Link
+          to="/"
+          onClick={(e) => handleNavClick(e, '#home')}
+          className="text-2xl font-bold text-primary hover:text-primary/80 transition-colors"
         >
           Amy Yan
         </Link>
-        <div className="space-x-4">
-          <Link 
-            to={location.pathname === '/' ? '#home' : '/'} 
-            onClick={(e) => handleNavClick(e, '#home')} 
-            className="hover:text-primary"
-          >
-            Home
-          </Link>
-          <Link 
-            to={location.pathname === '/' ? '#about' : '/#about'} // 如果不在首页，则先跳到首页的锚点
-            onClick={(e) => handleNavClick(e, '#about')} 
-            className="hover:text-primary"
-          >
-            About
-          </Link>
-          <Link to="/dance" className="hover:text-primary">Dance</Link>
-          <Link to="/art" className="hover:text-primary">Art</Link>
-          <Link to="/speeches" className="hover:text-primary">Speeches</Link>
+        <div className="hidden md:flex items-center space-x-2"> 
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              to={item.href.startsWith('#') && location.pathname !== '/' ? `/${item.href}` : item.href}
+              onClick={(e) => handleNavClick(e, item.href)}
+              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-primary/10 hover:text-primary transition-colors nav-item"
+              
+            >
+              {item.name}
+            </Link>
+          ))}
+          {/* ModeToggle 之后添加 */}
+        </div>
+        <div className="md:hidden"> {/* 移动端菜单按钮之后添加 */}
+          {/* <Button variant="ghost" size="icon"> <Menu /> </Button> */}
         </div>
       </div>
     </nav>
