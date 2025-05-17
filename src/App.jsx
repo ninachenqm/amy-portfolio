@@ -6,8 +6,9 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import DanceGalleryPage from './pages/DanceGalleryPage';
 import ArtGalleryPage from './pages/ArtGalleryPage';
-// import SpeechesPage from './pages/SpeechesPage'; // 如果你创建了这个页面
-import DanceEventDetailPage from './pages/DanceEventDetailPage'; // 1. 导入活动详情页面组件
+// import SpeechesPage from './pages/SpeechesPage';
+import DanceEventDetailPage from './pages/DanceEventDetailPage';
+import DrawingDetailPage from './pages/DrawingDetailPage'; // 1. 导入画作详情页面组件
 
 function App() {
   return (
@@ -17,12 +18,11 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/dance" element={<DanceGalleryPage />} />
-          {/* 2. 添加动态路由，:eventId 是一个参数 */}
           <Route path="/dance/events/:eventId" element={<DanceEventDetailPage />} />
           <Route path="/art" element={<ArtGalleryPage />} />
+          {/* 2. 添加画作详情的动态路由 */}
+          <Route path="/art/drawings/:drawingId" element={<DrawingDetailPage />} />
           {/* <Route path="/speeches" element={<SpeechesPage />} /> */}
-          {/* 你可以添加一个 404 页面 */}
-          {/* <Route path="*" element={<NotFoundPage />} /> */}
         </Routes>
       </main>
       <Footer />
