@@ -1,24 +1,31 @@
-
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import DanceGalleryPage from './pages/DanceGalleryPage';
+import ArtGalleryPage from './pages/ArtGalleryPage';
+import SpeechesPage from './pages/SpeechesPage'; 
 
 function App() {
-
   return (
-    <div className="min-h-screen bg-gray-900 flex flex-col items-center justify-center text-center p-10">
-      <h1 className="text-5xl font-extrabold text-teal-400 mb-4">
-        Tailwind CSS Is Ready!
-      </h1>
-      <p className="text-xl text-gray-300">
-        If this text is styled with a dark background, large teal title, and light paragraph text, Tailwind is working!
-      </p>
-      <div className="mt-8">
-        <button className="bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
-          A Tailwind Button
-        </button>
-      </div>
-
-      {/* 在这里，我们稍后会加入 Navbar 和 React Router 的 <Routes> */}
+    <div className="flex flex-col min-h-screen bg-background text-foreground">
+      <Navbar />
+      <main className="flex-grow container mx-auto px-4 py-8"> 
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/dance" element={<DanceGalleryPage />} />
+          <Route path="/art" element={<ArtGalleryPage />} />
+          <Route path="/speeches" element={<SpeechesPage />} />
+          {/* later add a 404 Page */}
+          {/* <Route path="*" element={<NotFoundPage />} /> */}
+        </Routes>
+      </main>
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
