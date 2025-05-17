@@ -5,9 +5,9 @@ import ExperienceSection from '../components/ExperienceSection';
 import { TypeAnimation } from 'react-type-animation'; // 1. 导入 TypeAnimation
 import { Download, Mail, Github, Linkedin, ArrowUpCircle, Youtube } from 'lucide-react'; // 2. 导入所需图标 (Youtube 是示例)
 
-// HeroSection 组件
+// HeroSection Component
 function HeroSection() {
-  // 平滑滚动到指定ID的元素，并考虑Navbar的高度
+
   const smoothScrollTo = (e, targetId) => {
     e.preventDefault();
     const section = document.getElementById(targetId);
@@ -32,7 +32,7 @@ function HeroSection() {
       className="py-20 md:py-32 flex flex-col items-center justify-center min-h-[90vh] text-center relative bg-gradient-to-b from-background via-background to-muted/20" // 参考项目的背景和最小高度
     >
       <div className="container px-4 md:px-6 mx-auto">
-        <div className="flex flex-col items-center space-y-6 md:space-y-8"> 
+        <div className="flex flex-col items-center space-y-6 md:space-y-8">
 
           {/* main title */}
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none " style={{ animationDelay: '0.1s' }}>
@@ -65,7 +65,7 @@ function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4 mt-6 " style={{ animationDelay: '0.7s' }}>
             <a
               href="#about"
-              onClick={(e) => smoothScrollTo(e, 'about')} 
+              onClick={(e) => smoothScrollTo(e, 'about')}
               className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3 text-base font-medium text-primary-foreground shadow-lg transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
 
             >
@@ -84,7 +84,7 @@ function HeroSection() {
             */}
           </div>
 
-          {/* 社交/联系图标链接 (可选) */}
+          {/* social icon link (可选) */}
           <div className="flex gap-4 mt-8 " style={{ animationDelay: '0.9s' }}>
             <a href="amyyan189@gmail.com" //Amy's Gmail
               className="text-muted-foreground hover:text-primary transition-colors"
