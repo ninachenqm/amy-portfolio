@@ -59,7 +59,7 @@ function ExperienceSection() {
               </div>
             ))
           ) : (
-            <p className="text-center text-muted-foreground">Experience information is being sorted out...</p>
+            <p className="text-center text-muted-foreground">经历信息正在整理中...</p>
           )}
         </div>
       </div>
