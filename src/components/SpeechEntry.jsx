@@ -1,6 +1,6 @@
 // src/components/SpeechEntry.jsx
 import React from 'react';
-import { MessageSquareText, BookOpen, Users, CalendarDays } from 'lucide-react'; // 示例图标
+import { MessageSquareText, BookOpen, Users, CalendarDays } from 'lucide-react'; 
 
 export default function SpeechEntry({ date, topic, source, forum }) {
   return (
