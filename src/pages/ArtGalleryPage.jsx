@@ -77,10 +77,10 @@ function ArtGalleryPage() {
   return (
     <div className="container mx-auto px-4 py-8 md:py-12">
       <div className="text-center mb-10 md:mb-16">
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-primary gradient-text " style={{animationDelay: '0.1s'}}>
+        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-primary gradient-text animate-in"  style={{animationDelay: '0.2s'}}>
           绘画作品集 (Artwork Portfolio)
         </h1>
-        <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto " style={{animationDelay: '0.2s'}}>
+        <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto animate-in" style={{animationDelay: '0.4s'}}>
           这里展示了 Amy 多年来的绘画创作，记录了她的成长与探索。点击图片查看详情。
         </p>
       </div>
