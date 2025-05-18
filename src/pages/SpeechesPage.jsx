@@ -1,12 +1,38 @@
 // src/pages/SpeechesPage.jsx
 import React from 'react';
 import SpeechEntry from '../components/SpeechEntry';
-import HostedEventCard from '../components/HostedEventCard'; // Assuming you have this component from previous steps
+import HostedEventCard from '../components/HostedEventCard';
+import SpeechImageCarousel from '../components/SpeechImageCarousel';
 
-// Data provided by the user (141 entries)
-// This should be Amy's actual data, sorted by date descending if not already.
-// The convertDate function is no longer strictly needed here if dates are already YYYY-MM-DD
-// but the formatDate function below will handle the display.
+
+export const speechHighlightImages = [ // Added export in case you want to move it later
+  {
+    src: '/Amy_speech_pics/2023-07-28_16-15-49_867.jpeg',
+    alt: 'Amy giving a speech 1',
+    caption: 'Presentation Moment 1 (Year)',
+  },
+  {
+    src: '/Amy_speech_pics/20190504_211328.jpeg',
+    alt: 'Amy giving a speech 2',
+    caption: 'Presentation Moment 2 (Year)',
+  },
+  {
+    src: '/Amy_speech_pics/20240802_141347.jpeg',
+    alt: 'Amy giving a speech 3',
+    caption: 'Presentation Moment 3 (Year)',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_20170513_213621.jpeg',
+    alt: 'Amy giving a speech 4',
+    caption: 'Presentation Moment 4 (Year)',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_20170917_203940.jpeg',
+    alt: 'Amy giving a speech 5',
+    caption: 'Presentation Moment 5 (Year)',
+  },
+];
+
 
 const speechesData = [
   { id: 'speech141', date: '2025-05-03', topic: 'Sat Improvement Plan', source: 'Self Research', forum: 'Family Meeting', type: 'individual' },
@@ -154,7 +180,7 @@ const speechesData = [
   // Remember to add the hosted event data here if it's not already included
   // and ensure the entire list is sorted by date descending.
 
-  
+
   {
     id: 'hosted-event-2023-04-08',
     type: 'hostedEvent',
@@ -169,8 +195,8 @@ const speechesData = [
     ],
     highlights: 'Zimeng starts to exercise time control.'
   }
-  
-].sort((a,b) => new Date(b.date) - new Date(a.date)); // Ensure sorting if mixing with hosted event later
+
+].sort((a, b) => new Date(b.date) - new Date(a.date)); // Ensure sorting if mixing with hosted event later
 
 
 function formatDateToUS(dateString) {
@@ -188,9 +214,9 @@ function formatDateToUS(dateString) {
 function SpeechesPage() {
   const speechesByYear = speechesData.reduce((acc, speech) => {
     if (!speech.date || speech.date.toLowerCase() === 'n/a') { // Skip entries with invalid dates
-        return acc;
+      return acc;
     }
-    const year = speech.date.substring(0, 4); 
+    const year = speech.date.substring(0, 4);
     if (!acc[year]) {
       acc[year] = [];
     }
@@ -205,27 +231,32 @@ function SpeechesPage() {
   return (
     <div className="container mx-auto px-4 py-8 md:py-12">
       <div className="text-center mb-10 md:mb-16">
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-primary gradient-text animate-in" style={{ animationDelay: '0.2s' }}>
+        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-primary gradient-text animate-in" style={{ animationDelay: '0.1s' }}>
           Speeches & Presentations
         </h1>
-        <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto animate-in" style={{ animationDelay: '0.4s' }}>
+        <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto animate-in" style={{ animationDelay: '0.2s' }}>
           A record of thoughts, explorations, and public speaking engagements.
         </p>
       </div>
 
+      {speechHighlightImages && speechHighlightImages.length > 0 && ( // Check if speechHighlightImages is defined
+        <div className="mb-12 md:mb-16 animate-in" style={{ animationDelay: '0.3s' }}>
+          <SpeechImageCarousel images={speechHighlightImages} />
+        </div>
+      )}
+
       {sortedYears.length > 0 ? (
         <div className="space-y-12 md:space-y-16">
           {sortedYears.map((year, idx) => (
-            <section key={year} className="" style={{animationDelay: `${(idx * 0.1) + 0.3}s`}}>
+            <section key={year} className="animate-in" style={{ animationDelay: `${(idx * 0.1) + 0.4}s` }}>
               <h2 className="text-2xl sm:text-3xl font-semibold text-foreground mb-6 md:mb-8 border-b-2 border-primary/30 pb-2">
                 Year {year}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-start">
                 {speechesByYear[year].map((speech) => {
-                  // Conditional rendering based on speech.type
                   if (speech.type === 'hostedEvent') {
                     return (
-                      <div key={speech.id} className="md:col-span-2"> {/* Hosted event spans more columns */}
+                      <div key={speech.id} className="md:col-span-2 lg:col-span-3"> {/* Hosted event can span more columns */}
                         <HostedEventCard event={speech} />
                       </div>
                     );
@@ -233,7 +264,7 @@ function SpeechesPage() {
                     return (
                       <SpeechEntry
                         key={speech.id}
-                        date={formatDateToUS(speech.date)} // Use the new US date formatting function
+                        date={formatDateToUS(speech.date)}
                         topic={speech.topic}
                         source={speech.source}
                         forum={speech.forum}
