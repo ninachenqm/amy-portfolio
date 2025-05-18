@@ -53,7 +53,7 @@ function Navbar() {
           onClick={(e) => handleNavClick(e, '#home')}
           className="text-2xl font-bold text-primary hover:text-primary/80 transition-colors"
         >
-          Amy Yan
+          Zimeng Yan
         </Link>
         <div className="hidden md:flex items-center space-x-2"> 
           {navItems.map((item) => (

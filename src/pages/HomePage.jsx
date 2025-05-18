@@ -36,7 +36,7 @@ function HeroSection() {
 
           {/* main title */}
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none " style={{ animationDelay: '0.1s' }}>
-            Hi, I am <span className="gradient-text">Amy Yan</span>
+            Hi, I am <span className="gradient-text">Zimeng Yan</span>
           </h1>
 
           {/* Typing  */}
