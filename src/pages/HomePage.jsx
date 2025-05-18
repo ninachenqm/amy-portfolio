@@ -86,11 +86,13 @@ function HeroSection() {
 
           {/* social icon link (可选) */}
           <div className="flex gap-4 mt-8 " style={{ animationDelay: '0.9s' }}>
-            <a href="amyyan189@gmail.com" //Amy's Gmail
-              className="text-muted-foreground hover:text-primary transition-colors"
-              aria-label="Email Amy Yan">
-              <Mail className="h-6 w-6" />
-              <span className="sr-only">Email</span>
+            <a 
+              href="mailto:amyyan189@gmail.com"
+              className="flex items-center text-muted-foreground hover:text-primary transition-colors text-sm sm:text-base group"
+              aria-label="Email Amy Yan at amyyan189@gmail.com"
+            >
+              <Mail className="h-5 w-5 sm:h-6 sm:w-6 mr-2 flex-shrink-0 transition-colors group-hover:text-primary" />
+              <span className="group-hover:text-primary transition-colors">amyyan189@gmail.com</span>
             </a>
             {/* 如果有其他相关平台的链接，继续添加 */}
             {/* 例如:
