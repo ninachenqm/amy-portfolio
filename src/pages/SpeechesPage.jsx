@@ -205,10 +205,10 @@ function SpeechesPage() {
   return (
     <div className="container mx-auto px-4 py-8 md:py-12">
       <div className="text-center mb-10 md:mb-16">
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-primary gradient-text animate-in" style={{ animationDelay: '0.1s' }}>
+        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-primary gradient-text animate-in" style={{ animationDelay: '0.2s' }}>
           Speeches & Presentations
         </h1>
-        <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto animate-in" style={{ animationDelay: '0.2s' }}>
+        <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto animate-in" style={{ animationDelay: '0.4s' }}>
           A record of thoughts, explorations, and public speaking engagements.
         </p>
       </div>
@@ -216,7 +216,7 @@ function SpeechesPage() {
       {sortedYears.length > 0 ? (
         <div className="space-y-12 md:space-y-16">
           {sortedYears.map((year, idx) => (
-            <section key={year} className="animate-in" style={{animationDelay: `${(idx * 0.1) + 0.3}s`}}>
+            <section key={year} className="" style={{animationDelay: `${(idx * 0.1) + 0.3}s`}}>
               <h2 className="text-2xl sm:text-3xl font-semibold text-foreground mb-6 md:mb-8 border-b-2 border-primary/30 pb-2">
                 Year {year}
               </h2>
