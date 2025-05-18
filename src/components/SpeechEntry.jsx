@@ -13,12 +13,12 @@ export default function SpeechEntry({ date, topic, source, forum }) {
         </div>
         <div className="flex items-center">
           <Users className="w-4 h-4 mr-2 text-primary/80 flex-shrink-0" />
-          <span>场合：{forum}</span>
+          <span>Forum: {forum}</span>
         </div>
         {source && source !== 'N/A' && (
           <div className="flex items-center">
             <BookOpen className="w-4 h-4 mr-2 text-primary/80 flex-shrink-0" />
-            <span>来源/灵感：{source}</span>
+            <span>Book or Source: {source}</span>
           </div>
         )}
       </div>
