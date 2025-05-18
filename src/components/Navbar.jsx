@@ -55,14 +55,15 @@ function Navbar() {
         >
           Zimeng Yan
         </Link>
-        <div className="hidden md:flex items-center space-x-2"> 
+        <div className="hidden md:flex items-center space-x-2">
           {navItems.map((item) => (
             <Link
               key={item.name}
-              to={item.href.startsWith('#') && location.pathname !== '/' ? `/${item.href}` : item.href}
+              // 更新 to 的逻辑，以更好处理页面内锚点和跨页锚点
+              to={item.href.startsWith('#') && location.pathname === '/' ? item.href : (item.href.startsWith('#') ? `/${item.href}` : item.href) }
               onClick={(e) => handleNavClick(e, item.href)}
               className="px-3 py-2 rounded-md text-sm font-medium hover:bg-primary/10 hover:text-primary transition-colors nav-item"
-              
+              // 之后我们会添加 activeSection 高亮逻辑
             >
               {item.name}
             </Link>

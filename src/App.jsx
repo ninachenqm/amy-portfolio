@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import DanceGalleryPage from './pages/DanceGalleryPage';
 import ArtGalleryPage from './pages/ArtGalleryPage';
-// import SpeechesPage from './pages/SpeechesPage';
+import SpeechesPage from './pages/SpeechesPage';
 import DanceEventDetailPage from './pages/DanceEventDetailPage';
 import DrawingDetailPage from './pages/DrawingDetailPage'; // 1. 导入画作详情页面组件
 
@@ -20,10 +20,8 @@ function App() {
           <Route path="/dance" element={<DanceGalleryPage />} />
           <Route path="/dance/events/:eventId" element={<DanceEventDetailPage />} />
           <Route path="/art" element={<ArtGalleryPage />} />
-          {/* 2. 添加画作详情的动态路由 */}
           <Route path="/art/drawings/:drawingId" element={<DrawingDetailPage />} />
-          {/* <Route path="/speeches" element={<SpeechesPage />} /> */}
-        </Routes>
+          <Route path="/speeches" element={<SpeechesPage />} /> {/* 2. 添加路由 */}        </Routes>
       </main>
       <Footer />
     </div>
