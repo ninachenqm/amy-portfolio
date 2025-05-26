@@ -24,6 +24,14 @@ const allArtworks = [
     materials: 'Graphite on Bristol Paper',
     description: 'A study in capturing expression and light.',
   },
+  {
+    id: 'portrait-of-a-friend-2024',
+    title: 'Portrait of a Friend',
+    year: 2022,
+    imageUrl: '/Amy_drawings_pics/2025-01-17_23-31-33_820.png', // 假设文件名是这个
+    materials: 'Graphite on Bristol Paper',
+    description: 'A study in capturing expression and light.',
+  },
   // ... 其他画作 ...
   // 确保你的 imageUrl 指向 public 文件夹中真实存在的图片文件路径
 ];
@@ -50,13 +58,13 @@ function ArtGalleryPage() {
   return (
     <div className="container mx-auto px-4 py-8 md:py-12">
       <div className="text-center mb-10 md:mb-16">
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-primary gradient-text animate-in" style={{animationDelay: '0.1s'}}>
+        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-primary gradient-text animate-in" style={{ animationDelay: '0.1s' }}>
           Artwork Portfolio
         </h1>
-        <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto animate-in" style={{animationDelay: '0.2s'}}>
+        <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto animate-in" style={{ animationDelay: '0.2s' }}>
           这里展示了 Amy 多年来的绘画创作，记录了她的成长与探索。
         </p>
-        <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto animate-in" style={{animationDelay: '0.2s'}}>
+        <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto animate-in" style={{ animationDelay: '0.2s' }}>
           点击图片查看详情。
         </p>
       </div>
