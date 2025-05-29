@@ -481,11 +481,99 @@ const allArtworks = [
     materials: '',
     description: '',
   },
-  // 更多作品请依此格式补全，确保每个对象只含一个 materials 字段
+  // Cat sitting under stars and sakura tree
+  {
+    id: 'Cat-sitting-under-stars-and-sakura-tree',
+    title: 'Cat sitting under stars and sakura tree',
+    year: 2025,
+    type: 'Graphite Pencil',
+    imageUrl: '/Amy_drawings_pics/2025-01-20_11-55-48_421.png',
+    materials: '',
+    description: '',
+  },
+  // Stars
+  {
+    id: 'Stars',
+    title: 'Stars',
+    year: 2025,
+    type: 'Graphite Pencil',
+    imageUrl: '/Amy_drawings_pics/2025-01-20_12-12-31_453.png',
+    materials: '',
+    description: '',
+  },
+  // Dog and Cat
+  {
+    id: 'Dog-and-Cat',
+    title: 'Dog and Cat',
+    year: 2025,
+    type: 'Graphite Pencil',
+    imageUrl: '/Amy_drawings_pics/2025-01-20_12-21-21_992.png',
+    materials: '',
+    description: '',
+  },
+  // a woman with braided hair
+  {
+    id: 'a-woman-with-braided-hair',
+    title: 'A woman with braided hair',
+    year: 2025,
+    type: 'Graphite Pencil',
+    imageUrl: '/Amy_drawings_pics/2025-01-20_12-28-28_831.png',
+    materials: '',
+    description: '',
+  },
+  // Two garlics
+  {
+    id: 'Two-garlics',
+    title: 'Two garlics',
+    year: 2025,
+    type: 'Graphite Pencil',
+    imageUrl: '/Amy_drawings_pics/2025-01-20_12-32-05_143.png',
+    materials: '',
+    description: '',
+  },
+  // a cat
+  {
+    id: 'a-cat',
+    title: 'A cat',
+    year: 2025,
+    type: 'Graphite Pencil',
+    imageUrl: '/Amy_drawings_pics/2025-01-20_12-35-02_682.png',
+    materials: '',
+    description: '',
+  },
+  // a white women with huh face
+  {
+    id: 'a-white-women-with-huh-face',
+    title: 'A white women with huh face',
+    year: 2025,
+    type: 'Graphite Pencil',
+    imageUrl: '/Amy_drawings_pics/2025-01-20_12-38-03_787 (2025-01-20T19_40_27.083).png',
+    materials: '',
+    description: '',
+  },
+  // a black woman
+  {
+    id: 'a-black-woman',
+    title: 'A black woman',
+    year: 2025,
+    type: 'Graphite Pencil',
+    imageUrl: '/Amy_drawings_pics/2025-01-20_12-41-25_805.png',
+    materials: '',
+    description: '',
+  },
+  // a little girl smelling a flower
+  {
+    id: 'a-little-girl-smelling-a-flower',
+    title: 'A little girl smelling a flower',
+    year: 2025,
+    type: 'Graphite Pencil',
+    imageUrl: '/Amy_drawings_pics/2025-01-20_12-43-53_803.png',
+    materials: '',
+    description: '',
+  },
 ];
 
 function ArtGalleryPage() {
-  // 根据标准化后的 type 分组
   const artworksByType = allArtworks.reduce((acc, artwork) => {
     const category = normalizeType(artwork.type);
     if (!acc[category]) acc[category] = [];
@@ -496,7 +584,6 @@ function ArtGalleryPage() {
     return acc;
   }, {});
 
-  // 媒介展示顺序
   const categoryOrder = ['Oil', 'Colored Pencil', 'Acrylic', 'Graphite Pencil'];
   const sortedCategories = categoryOrder
     .filter(cat => artworksByType[cat])
