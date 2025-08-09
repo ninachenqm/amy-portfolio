@@ -6,36 +6,29 @@ import { useParams, Link } from 'react-router-dom';
 // 示例活动详情数据 (I need Amy 's info)
 // 这个数据的 key 应该与 InteractiveCardStack.jsx 中每个活动的 id 对应
 const eventDetailsData = {
-  'spring-recital-2024': {
-    title: '2024 春季汇演',
-    date: '2024年5月15日',
-    images: [ // 这个活动的图片URL数组
-      'https://placehold.co/800x600/fca5a5/450a0a?text=汇演照片1',
-      'https://placehold.co/800x600/fca5a5/450a0a?text=汇演照片2',
-      'https://placehold.co/800x600/fca5a5/450a0a?text=汇演照片3',
-      'https://placehold.co/800x600/fca5a5/450a0a?text=汇演照片4',
+  '2017': {
+    title: '2017',
+    images: [ 
+      '/Amy_dancing_pics/IMG_5196.JPG',
+      '/Amy_dancing_pics/20190201_213716.jpg',
     ],
-    description: '年度春季舞蹈展示，包含了芭蕾、爵士和现代舞等多种风格的精彩节目。同学们都表现得非常出色！'
   },
-  'national-competition-2023': {
-    title: '2023 全国舞蹈比赛',
-    date: '2023年7月22日',
-    images: [
-      'https://placehold.co/800x600/86efac/14532d?text=比赛照片1',
-      'https://placehold.co/800x600/86efac/14532d?text=比赛照片2',
+  '2018': {
+    title: '2018',
+    images: [ 
+      '/Amy_dancing_pics/20200120_102045.jpg',
     ],
-    description: '团队在全国舞蹈比赛中全力以赴，最终获得了团体二等奖的好成绩，是一次宝贵的经历。'
   },
   'winter-showcase-2023': {
     title: '2023 冬季表演',
     date: '2023年12月10日',
     images: [
-        'https://placehold.co/800x600/93c5fd/1e3a8a?text=冬季表演照片1',
-        'https://placehold.co/800x600/93c5fd/1e3a8a?text=冬季表演照片2',
-        'https://placehold.co/800x600/93c5fd/1e3a8a?text=冬季表演照片3',
+      'https://placehold.co/800x600/93c5fd/1e3a8a?text=冬季表演照片1',
+      'https://placehold.co/800x600/93c5fd/1e3a8a?text=冬季表演照片2',
+      'https://placehold.co/800x600/93c5fd/1e3a8a?text=冬季表演照片3',
     ],
     description: '充满节日气氛的冬季表演，我们用舞蹈点亮了整个舞台。'
-    },
+  },
   // 你需要为 InteractiveCardStack.jsx 中的每个活动ID都在这里添加对应的详情
 };
 
@@ -84,8 +77,8 @@ function DanceEventDetailPage() {
       </div>
 
       <div className="text-center mt-12">
-        <Link 
-          to="/dance" 
+        <Link
+          to="/dance"
           className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-2.5 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
         >
           &larr; 返回所有舞蹈活动

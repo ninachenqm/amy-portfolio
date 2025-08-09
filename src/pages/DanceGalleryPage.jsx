@@ -12,13 +12,24 @@ function DanceGalleryPage() {
   return (
     <div className="container mx-auto px-4 py-8 md:py-12">
       <div className="text-center mb-10 md:mb-16">
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-primary gradient-text animate-in" style={{animationDelay: '0.2s'}}>
+        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-primary gradient-text animate-in" style={{ animationDelay: '0.2s' }}>
           舞蹈风采
         </h1>
-        <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto animate-in" style={{animationDelay: '0.4s'}}>
+        <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto animate-in" style={{ animationDelay: '0.4s' }}>
           这里记录了每一次精彩的舞蹈瞬间和表演。点击卡片查看更多活动照片。
         </p>
+
+        <ul className="mt-6 text-lg text-muted-foreground space-y-2 text-left max-w-md mx-auto list-disc list-inside">
+          <li>1 National Championship</li>
+          <li>7 State Championships</li>
+          <li>25+ Local championships</li>
+          <li>Solo State Championship</li>
+          <li>Duo State Championship</li>
+          <li>4 Community service parades</li>
+          <li>Practiced 585 days consecutively and made it on competition team</li>
+        </ul>
       </div>
+
 
       {/* 将卡片堆叠居中显示 */}
       <div className="flex justify-center items-start min-h-[60vh] md:min-h-[70vh]">
