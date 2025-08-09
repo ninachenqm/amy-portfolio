@@ -22,14 +22,13 @@ const speechImages = [
     { src: '/Amy_speech_pics/20240802_141347.jpeg', alt: 'Speech 3' },
 ];
 
-
 function FeatureSection({ icon, title, description, images, linkTo, linkText, imageFirst = false, alignButtonRight = false }) {
     const content = (
         <div>
-            
-            <h3 className="text-3xl font-bold mb-4 text-foreground">{title}</h3>
+            <h3 className="text-3xl font-bold mb-4 text-foreground flex items-center gap-2">
+                {icon}{title}
+            </h3>
             <p className="text-muted-foreground mb-6">{description}</p>
-            
             <div className={alignButtonRight ? 'md:text-right' : ''}>
                 <Link
                     to={linkTo}
@@ -49,18 +48,13 @@ function FeatureSection({ icon, title, description, images, linkTo, linkText, im
 
     return (
         <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className={imageFirst ? 'md:order-last' : ''}>
-                {content}
-            </div>
-            <div>
-                {imageCarousel}
-            </div>
+            <div className={imageFirst ? 'md:order-last' : ''}>{content}</div>
+            <div>{imageCarousel}</div>
         </div>
     );
 }
 
-
-function PortfolioPreview() {
+export default function PortfolioPreview() {
     return (
         <section className="w-full py-16 md:py-24 lg:py-28 bg-background">
             <div className="container mx-auto px-4 md:px-6">
@@ -72,44 +66,48 @@ function PortfolioPreview() {
                         Discover the worlds of art, dance, and expression that I love to explore.
                     </p>
                 </div>
-                <div className="grid gap-20 md:gap-28">
-                    {/* Feature 1: Art  */}
-                    <FeatureSection
-                        icon={<Paintbrush className="inline-block h-4 w-4 mr-1" />}
-                        title="ART: Sketch the stress away"
-                        description="if u wanna add something here it will look like this "
-                        images={artImages}
-                        linkTo="/art"
-                        linkText="View Art Gallery"
-                        alignButtonRight={true} 
-                    />
 
-                    {/* Feature 2: Dance  */}
-                    <FeatureSection
-                        icon={<Footprints className="inline-block h-4 w-4 mr-1" />}
-                        title="DANCE: Where passion meets the beat"
-                        description=""
-                        images={danceImages}
-                        linkTo="/dance"
-                        linkText="Explore Dance Showcase"
-                        imageFirst={true}
-                    // alignButtonRight 默认为 false
-                    />
+                <div className="grid gap-20 md:gap-28">
+                    {/* Feature 1: Art */}
+                    <section id="art" aria-label="Art gallery preview" className="scroll-mt-28 md:scroll-mt-32">
+                        <FeatureSection
+                            icon={<Paintbrush className="inline-block h-5 w-5" />}
+                            title="ART: Sketch the stress away"
+                            description="if u wanna add something here it will look like this "
+                            images={artImages}
+                            linkTo="/art"
+                            linkText="View Art Gallery"
+                            alignButtonRight
+                        />
+                    </section>
+
+                    {/* Feature 2: Dance */}
+                    <section id="dance" aria-label="Dance showcase preview" className="scroll-mt-28 md:scroll-mt-32">
+                        <FeatureSection
+                            icon={<Footprints className="inline-block h-5 w-5" />}
+                            title="DANCE: Where passion meets the beat"
+                            description=""
+                            images={danceImages}
+                            linkTo="/dance"
+                            linkText="Explore Dance Showcase"
+                            imageFirst
+                        />
+                    </section>
 
                     {/* Feature 3: Speech */}
-                    <FeatureSection
-                        icon={<Mic className="inline-block h-4 w-4 mr-1" />}
-                        title="SPEECH: Speak to be heard, voice to be felt"
-                        description=""
-                        images={speechImages}
-                        linkTo="/speeches"
-                        linkText="See All Speeches"
-                        alignButtonRight={true} 
-                    />
+                    <section id="speeches" aria-label="Speeches preview" className="scroll-mt-28 md:scroll-mt-32">
+                        <FeatureSection
+                            icon={<Mic className="inline-block h-5 w-5" />}
+                            title="SPEECH: Speak to be heard, voice to be felt"
+                            description=""
+                            images={speechImages}
+                            linkTo="/speeches"
+                            linkText="See All Speeches"
+                            alignButtonRight
+                        />
+                    </section>
                 </div>
             </div>
         </section>
     );
 }
-
-export default PortfolioPreview;

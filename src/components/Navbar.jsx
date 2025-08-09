@@ -19,7 +19,6 @@ const CloseIcon = (props) => (
   </svg>
 );
 
-
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
@@ -30,49 +29,40 @@ function Navbar() {
     setIsMenuOpen(false);
   }, [location]);
 
-
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
       const navbarHeight = document.querySelector('nav')?.offsetHeight || 80;
       const sectionTop = section.getBoundingClientRect().top + window.scrollY - navbarHeight;
-      window.scrollTo({
-        top: sectionTop,
-        behavior: 'smooth',
-      });
+      window.scrollTo({ top: sectionTop, behavior: 'smooth' });
     }
   };
 
   const handleNavClick = (event, href) => {
-    // Close the mobile menu whenever a link is clicked
-    if (isMenuOpen) {
-      setIsMenuOpen(false);
-    }
+    if (isMenuOpen) setIsMenuOpen(false);
 
     const isAnchorLink = href.startsWith('#');
     const sectionId = isAnchorLink ? href.substring(1) : null;
 
     if (isAnchorLink && sectionId) {
       event.preventDefault();
-      // If we are already on the homepage, just scroll
       if (location.pathname === '/') {
         scrollToSection(sectionId);
       } else {
-        // If not on the homepage, navigate to it and pass the sectionId in the hash
-        navigate(`/${href}`);
+        navigate(`/${href}`); // go to Home with hash, scroll handled there
       }
     }
-    // For non-anchor links like '/dance', the <Link> component will handle navigation.
   };
 
-  // Define navigation items
+  // New order + in-page anchors
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Experience', href: '#experiences' },
-    { name: 'Dance', href: '/dance' },
-    { name: 'Art', href: '/art' },
-    { name: 'Speech', href: '/speeches' },
+    { name: 'home', href: '#home' },
+    { name: 'about', href: '#about' },
+    { name: 'art', href: '#art' },
+    { name: 'dance', href: '#dance' },
+    { name: 'speech', href: '#speeches' },
+    { name: 'experience', href: '#experiences' },
+    { name: 'volunteering/work', href: '#experiences' }, // same section as My Journey
   ];
 
   return (
