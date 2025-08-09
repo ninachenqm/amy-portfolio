@@ -1,22 +1,33 @@
 // src/pages/DanceGalleryPage.jsx
-import React from 'react';
-import InteractiveCardStack from '../components/InteractiveCardStack'; // 1. 导入组件
-
-// 你可以在这里定义或从其他地方导入 Amy 的舞蹈活动数据
-// const amySpecificDanceEvents = [
-//   { id: 'unique-event-1', title: 'Amy的特别演出', date: '2025年1月1日', coverImageUrl: '...', eventPageUrl: '/dance/events/unique-event-1', description: '...' },
-//   // ...更多活动
-// ];
+import React, { useState } from 'react'; 
+import DanceEventsGrid from '../components/DanceEventsGrid';
+import { allDanceEvents } from '../data/danceData';
 
 function DanceGalleryPage() {
+
+  const [selectedImg, setSelectedImg] = useState(null);
+
+
+  const eventsByYear = allDanceEvents.reduce((acc, event) => {
+    const year = event.year;
+    if (!acc[year]) {
+      acc[year] = [];
+    }
+    acc[year].push(event);
+    return acc;
+  }, {});
+
+
+  const sortedYears = Object.keys(eventsByYear).sort((a, b) => b - a);
+
   return (
     <div className="container mx-auto px-4 py-8 md:py-12">
       <div className="text-center mb-10 md:mb-16">
         <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-primary gradient-text animate-in" style={{ animationDelay: '0.2s' }}>
-        Dance Showcase
+          Dance Showcase
         </h1>
         <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto animate-in" style={{ animationDelay: '0.4s' }}>
-        Capturing every amazing dance moment. Click a card to see more photos.
+        Capture every spectacular dance moment. Click on the image to view the full-screen preview.
         </p>
 
         <ul className="mt-6 text-lg text-muted-foreground space-y-2 text-left max-w-md mx-auto list-disc list-inside">
@@ -30,11 +41,43 @@ function DanceGalleryPage() {
         </ul>
       </div>
 
+      {sortedYears.length > 0 ? (
+        <div className="space-y-12 md:space-y-16">
+          {sortedYears.map(year => (
+            <section key={year}>
+              <DanceEventsGrid
+                yearTitle={year}
+                events={eventsByYear[year]}
+                onImageClick={setSelectedImg}
+              />
+            </section>
+          ))}
+        </div>
+      ) : (
+        <p className="text-center text-muted-foreground text-xl py-10">
+          Dance event photos are currently being organized—stay tuned!
+        </p>
+      )}
 
-      {/* 将卡片堆叠居中显示 */}
-      <div className="flex justify-center items-start min-h-[60vh] md:min-h-[70vh]">
-        <InteractiveCardStack /* eventsInput={amySpecificDanceEvents} */ /> {/* 2. 使用组件，如果需要传递特定数据，取消注释并传入 */}
-      </div>
+      {/* full-screen image preview */}
+      {selectedImg && (
+        <div
+          className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 cursor-pointer"
+          onClick={() => setSelectedImg(null)}
+        >
+          <img
+            src={selectedImg}
+            alt="Full size preview"
+            className="max-h-[90%] max-w-[90%] object-contain"
+          />
+          <button
+            className="absolute top-4 right-4 text-white text-3xl font-bold"
+            onClick={() => setSelectedImg(null)}
+          >
+            &times;
+          </button>
+        </div>
+      )}
     </div>
   );
 }

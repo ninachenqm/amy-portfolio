@@ -7,7 +7,6 @@ import HomePage from './pages/HomePage';
 import DanceGalleryPage from './pages/DanceGalleryPage';
 import ArtGalleryPage from './pages/ArtGalleryPage';
 import SpeechesPage from './pages/SpeechesPage';
-import DanceEventDetailPage from './pages/DanceEventDetailPage';
 import DrawingDetailPage from './pages/DrawingDetailPage'; 
 import ScrollToTopButton from './components/ScrollToTopButton';
 
@@ -20,7 +19,6 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/dance" element={<DanceGalleryPage />} />
-          <Route path="/dance/events/:eventId" element={<DanceEventDetailPage />} />
           <Route path="/art" element={<ArtGalleryPage />} />
           <Route path="/art/drawings/:drawingId" element={<DrawingDetailPage />} />
           <Route path="/speeches" element={<SpeechesPage />} /> {/* 2. 添加路由 */}        </Routes>
