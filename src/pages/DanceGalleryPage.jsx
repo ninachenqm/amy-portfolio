@@ -13,10 +13,10 @@ function DanceGalleryPage() {
     <div className="container mx-auto px-4 py-8 md:py-12">
       <div className="text-center mb-10 md:mb-16">
         <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-primary gradient-text animate-in" style={{ animationDelay: '0.2s' }}>
-          舞蹈风采
+        Dance Showcase
         </h1>
         <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto animate-in" style={{ animationDelay: '0.4s' }}>
-          这里记录了每一次精彩的舞蹈瞬间和表演。点击卡片查看更多活动照片。
+        Capturing every amazing dance moment. Click a card to see more photos.
         </p>
 
         <ul className="mt-6 text-lg text-muted-foreground space-y-2 text-left max-w-md mx-auto list-disc list-inside">

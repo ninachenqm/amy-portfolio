@@ -55,12 +55,12 @@ function DanceEventDetailPage() {
   if (!event) {
     return (
       <div className="container mx-auto px-4 py-10 text-center">
-        <h2 className="text-2xl font-semibold text-destructive">未找到活动信息</h2>
+        <h2 className="text-2xl font-semibold text-destructive"> Event Not Found</h2>
         <p className="mt-4 text-muted-foreground">
-          你所查找的舞蹈活动不存在或已被移动。
+        The dance event you are looking for does not exist or has been moved.
         </p>
         <Link to="/dance" className="mt-6 inline-block text-primary hover:underline">
-          &larr; 返回舞蹈风采页面
+          &larr;  Back to Dance Showcase
         </Link>
       </div>
     );
@@ -84,10 +84,10 @@ function DanceEventDetailPage() {
             {/* 如果不使用插件，可以直接用 aspect-[1/1] 或 aspect-square (Tailwind v3.0+) */}
             <img
               src={imgSrc}
-              alt={`${event.title} - 照片 ${index + 1}`}
+              alt={`${event.title} - Image${index + 1}`}
               className="w-full h-full object-cover cursor-pointer"
               onClick={() => setSelectedImg(imgSrc)}
-              onError={(e) => { e.currentTarget.src = 'https://placehold.co/600x400/7f1d1d/fecaca?text=图片加载失败'; e.currentTarget.alt = '图片加载失败'; }}
+              onError={(e) => { e.currentTarget.src = 'https://placehold.co/600x400/7f1d1d/fecaca?text=Image failed to load'; e.currentTarget.alt = 'Image failed to load'; }}
             />
           </div>
         ))}
@@ -118,7 +118,7 @@ function DanceEventDetailPage() {
           to="/dance"
           className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-2.5 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
         >
-          &larr; 返回所有舞蹈活动
+          &larr; Back to All Dance Events
         </Link>
       </div>
     </div>
