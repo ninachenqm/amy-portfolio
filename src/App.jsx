@@ -8,7 +8,9 @@ import DanceGalleryPage from './pages/DanceGalleryPage';
 import ArtGalleryPage from './pages/ArtGalleryPage';
 import SpeechesPage from './pages/SpeechesPage';
 import DanceEventDetailPage from './pages/DanceEventDetailPage';
-import DrawingDetailPage from './pages/DrawingDetailPage'; // 1. 导入画作详情页面组件
+import DrawingDetailPage from './pages/DrawingDetailPage'; 
+import ScrollToTopButton from './components/ScrollToTopButton';
+
 
 function App() {
   return (
@@ -24,6 +26,7 @@ function App() {
           <Route path="/speeches" element={<SpeechesPage />} /> {/* 2. 添加路由 */}        </Routes>
       </main>
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 }
