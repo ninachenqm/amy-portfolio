@@ -100,7 +100,7 @@ function EventCard({ card, index, onCardClick, onCycleCard, totalVisibleCards })
       whileTap={index === 0 ? { scale: currentScale - 0.02 } : {}}
     >
       {/* 卡片内部结构 */}
-      <div className="relative flex h-full flex-col overflow-hidden rounded-2xl text-card-foreground">
+      <div className="relative flex h-full flex-col overflow-hidden rounded-2xl text-card-foreground backdrop-blur-md border-t ">
         <div className="relative h-3/5 w-full overflow-hidden">
           <img
             src={card.coverImageUrl}
@@ -110,7 +110,7 @@ function EventCard({ card, index, onCardClick, onCycleCard, totalVisibleCards })
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5 bg-gradient-to-t from-card via-card/95 to-transparent pt-12">
+        <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5 bg-card/60 ">
           <h2 className="text-xl md:text-2xl font-bold text-foreground">{card.title}</h2>
           <p className="text-sm text-muted-foreground mt-1">{card.date}</p>
           {card.description && (
