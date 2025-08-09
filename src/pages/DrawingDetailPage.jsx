@@ -3,30 +3,6 @@ import React from 'react';
 import { useParams, Link, useLocation } from 'react-router-dom'; // Import useLocation
 import { allArtworks } from '../data/artData'; // Import shared artwork data
 
-// --- 示例画作详情数据 ---
-// 现在我们假设这个数据会从 ArtGalleryPage 通过路由状态传递，或者我们从一个统一的数据源获取
-// 为了演示，我们仍然使用一个本地数据对象，但确保它与 ArtGalleryPage 中的数据结构一致
-// 并且图片URL使用 imageUrl
-// const artworksDetailsData = {
-//     'sliced-tomatoes': {
-//         title: 'Sliced Tomatoes',
-//         year: 2024,
-//         imageUrl: '/Amy_drawings_pics/2025-01-17_23-28-56_546.png', // 使用与卡片相同的图片URL
-//         materials: 'Digital Painting (Procreate)',
-//         description: 'An exploration of surreal landscapes and subconscious thoughts. This piece aims to evoke a sense of wonder and introspection, playing with light and shadow to create a dreamlike atmosphere.',
-//     },
-//     'portrait-of-a-friend-2024': {
-//         title: 'Portrait of a Friend',
-//         year: 2024,
-//         imageUrl: '/Amy_drawings_pics/2025-01-17_23-31-33_820.png',
-//         materials: 'Graphite on Bristol Paper',
-//         description: 'A study in capturing expression and light. The focus was on rendering the subtle nuances of the subject\'s personality through their gaze and posture.',
-//     },
-//     // 你需要为 ArtGalleryPage.jsx 中的每个画作 ID 都在这里添加对应的详情
-//     // 或者，更好的做法是从一个统一的数据源获取这些信息
-// };
-// --- 示例画作详情数据结束 ---
-
 
 function DrawingDetailPage() {
     const { drawingId } = useParams();
