@@ -20,23 +20,29 @@ const defaultDanceEvents = [
     eventPageUrl: '/dance/events/2018',
   },
   {
-    id: 'winter-showcase-2023',
-    title: '2023 冬季表演',
-    coverImageUrl: 'https://placehold.co/600x400/93c5fd/1e3a8a?text=冬季表演封面',
-    eventPageUrl: '/dance/events/winter-showcase-2023',
+    id: '2021',
+    title: '2021',
+    coverImageUrl: '/Amy_dancing_pics/2021-04-17_10-17-18_637.jpeg',
+    eventPageUrl: '/dance/events/2021',
   },
   {
-    id: 'community-performance-2023',
-    title: '社区公益演出',
-    coverImageUrl: 'https://placehold.co/600x400/fcd34d/b45309?text=社区演出封面',
-    eventPageUrl: '/dance/events/community-performance-2023',
+    id: '2022',
+    title: '2022',
+    coverImageUrl: '/Amy_dancing_pics/20240428_140635.jpg',
+    eventPageUrl: '/dance/events/2022',
   },
   {
-    id: 'dance-workshop-2024',
-    title: '现代舞工作坊',
-    coverImageUrl: 'https://placehold.co/600x400/c4b5fd/4c1d95?text=工作坊封面',
-    eventPageUrl: '/dance/events/dance-workshop-2024',
-  }
+    id: '2024',
+    title: '2024',
+    coverImageUrl: '/Amy_dancing_pics/2024-04-21_12-18-58_201.jpeg',
+    eventPageUrl: '/dance/events/2024',
+  },
+  {
+    id: '2025',
+    title: '2025',
+    coverImageUrl: '/Amy_dancing_pics/2024-04-28_17-48-28_000.jpeg',
+    eventPageUrl: '/dance/events/2025',
+  },
 ];
 
 // 单个卡片组件

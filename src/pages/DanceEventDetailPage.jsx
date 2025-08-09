@@ -8,28 +8,43 @@ import { useParams, Link } from 'react-router-dom';
 const eventDetailsData = {
   '2017': {
     title: '2017',
-    images: [ 
+    images: [
       '/Amy_dancing_pics/IMG_5196.JPG',
       '/Amy_dancing_pics/20190201_213716.jpg',
     ],
   },
   '2018': {
     title: '2018',
-    images: [ 
+    images: [
       '/Amy_dancing_pics/20200120_102045.jpg',
     ],
   },
-  'winter-showcase-2023': {
-    title: '2023 冬季表演',
-    date: '2023年12月10日',
+  '2021': {
+    title: '2021',
     images: [
-      'https://placehold.co/800x600/93c5fd/1e3a8a?text=冬季表演照片1',
-      'https://placehold.co/800x600/93c5fd/1e3a8a?text=冬季表演照片2',
-      'https://placehold.co/800x600/93c5fd/1e3a8a?text=冬季表演照片3',
+      '/Amy_dancing_pics/2021-04-17_10-17-18_637.jpeg',
     ],
-    description: '充满节日气氛的冬季表演，我们用舞蹈点亮了整个舞台。'
   },
-  // 你需要为 InteractiveCardStack.jsx 中的每个活动ID都在这里添加对应的详情
+  '2022': {
+    title: '2022',
+    images: [
+      '/Amy_dancing_pics/20240428_140635.jpg',
+      '/Amy_dancing_pics/2022-04-24_14-04-10_691.jpeg',
+    ],
+  },
+  '2024': {
+    title: '2024',
+    images: [
+      '/Amy_dancing_pics/2022-04-23_21-03-21_242.jpeg',
+      '/Amy_dancing_pics/2024-04-21_12-18-58_201.jpeg',
+    ],
+  },
+  '2025': {
+    title: '2025',
+    images: [
+      '/Amy_dancing_pics/2024-04-28_17-48-28_000.jpeg',
+    ],
+  },
 };
 
 function DanceEventDetailPage() {
