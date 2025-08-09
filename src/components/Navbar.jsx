@@ -1,15 +1,40 @@
 // src/components/Navbar.jsx
-import React from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom'; // 导入 useNavigate
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+
+// Menu Icon (Hamburger)
+const MenuIcon = (props) => (
+  <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="4" x2="20" y1="12" y2="12" />
+    <line x1="4" x2="20" y1="6" y2="6" />
+    <line x1="4" x2="20" y1="18" y2="18" />
+  </svg>
+);
+
+// Close Icon (X)
+const CloseIcon = (props) => (
+  <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M18 6 6 18" />
+    <path d="m6 6 12 12" />
+  </svg>
+);
+
 
 function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate(); 
-  const scrollToSection = (event, sectionId) => {
-    event.preventDefault();
+  const navigate = useNavigate();
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location]);
+
+
+  const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      const navbarHeight = document.querySelector('nav')?.offsetHeight || 80; 
+      const navbarHeight = document.querySelector('nav')?.offsetHeight || 80;
       const sectionTop = section.getBoundingClientRect().top + window.scrollY - navbarHeight;
       window.scrollTo({
         top: sectionTop,
@@ -19,35 +44,41 @@ function Navbar() {
   };
 
   const handleNavClick = (event, href) => {
-    const isHomePage = location.pathname === '/';
+    // Close the mobile menu whenever a link is clicked
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
+
     const isAnchorLink = href.startsWith('#');
     const sectionId = isAnchorLink ? href.substring(1) : null;
 
-    if (isAnchorLink) {
-      event.preventDefault(); // 阻止所有锚点链接的默认行为
-      if (isHomePage && sectionId) {
-        scrollToSection(event, sectionId);
-      } else if (sectionId) {
-        // 如果不在首页，但目标是锚点，先导航到首页，然后尝试滚动
-        // 使用 state 来传递滚动目标，在 HomePage 中用 useEffect 来处理
-        navigate(`/#${sectionId}`);
+    if (isAnchorLink && sectionId) {
+      event.preventDefault();
+      // If we are already on the homepage, just scroll
+      if (location.pathname === '/') {
+        scrollToSection(sectionId);
+      } else {
+        // If not on the homepage, navigate to it and pass the sectionId in the hash
+        navigate(`/${href}`);
       }
     }
-    // 对于非锚点链接 (如 /dance, /art)，Link 组件会正常处理路由跳转
+    // For non-anchor links like '/dance', the <Link> component will handle navigation.
   };
 
+  // Define navigation items
   const navItems = [
-    { name: 'Home', href: '#home', isExternal: false },
-    { name: 'About', href: '#about', isExternal: false },
-    { name: 'Experience', href: '#experiences', isExternal: false }, 
-    { name: 'Dance', href: '/dance', isExternal: false },
-    { name: 'Art', href: '/art', isExternal: false },
-    { name: 'Speech', href: '/speeches', isExternal: false },
+    { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
+    { name: 'Experience', href: '#experiences' },
+    { name: 'Dance', href: '/dance' },
+    { name: 'Art', href: '/art' },
+    { name: 'Speech', href: '/speeches' },
   ];
 
   return (
     <nav className="bg-card/80 backdrop-blur-md text-card-foreground shadow-sm py-3 sticky top-0 z-50 transition-all duration-300">
       <div className="container mx-auto flex justify-between items-center px-4">
+        {/* Brand Name */}
         <Link
           to="/"
           onClick={(e) => handleNavClick(e, '#home')}
@@ -55,25 +86,52 @@ function Navbar() {
         >
           Zimeng Yan
         </Link>
+
+        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-2">
           {navItems.map((item) => (
             <Link
               key={item.name}
-              // 更新 to 的逻辑，以更好处理页面内锚点和跨页锚点
-              to={item.href.startsWith('#') && location.pathname === '/' ? item.href : (item.href.startsWith('#') ? `/${item.href}` : item.href) }
+              to={item.href.startsWith('#') ? `/${item.href}` : item.href}
               onClick={(e) => handleNavClick(e, item.href)}
-              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-primary/10 hover:text-primary transition-colors nav-item"
-              // 之后我们会添加 activeSection 高亮逻辑
+              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-primary/10 hover:text-primary transition-colors"
             >
               {item.name}
             </Link>
           ))}
-          {/* ModeToggle 之后添加 */}
         </div>
-        <div className="md:hidden"> {/* 移动端菜单按钮之后添加 */}
-          {/* <Button variant="ghost" size="icon"> <Menu /> </Button> */}
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="inline-flex items-center justify-center p-2 rounded-md text-primary hover:text-primary/80 hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
+            aria-controls="mobile-menu"
+            aria-expanded={isMenuOpen}
+          >
+            <span className="sr-only">Open main menu</span>
+            {isMenuOpen ? <CloseIcon className="block h-6 w-6" /> : <MenuIcon className="block h-6 w-6" />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Menu Panel */}
+      {isMenuOpen && (
+        <div className="md:hidden" id="mobile-menu">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                to={item.href.startsWith('#') ? `/${item.href}` : item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
+                className="block px-3 py-2 rounded-md text-base font-medium text-card-foreground hover:bg-primary/10 hover:text-primary transition-colors"
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
