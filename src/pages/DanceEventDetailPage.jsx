@@ -1,5 +1,5 @@
 // src/pages/DanceEventDetailPage.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
 // Amy说根据花絮/practice/competition来分
@@ -50,6 +50,7 @@ const eventDetailsData = {
 function DanceEventDetailPage() {
   const { eventId } = useParams(); // 从URL中获取 eventId 参数
   const event = eventDetailsData[eventId]; // 根据 eventId 查找活动数据
+  const [selectedImg, setSelectedImg] = useState(null);
 
   if (!event) {
     return (
@@ -84,12 +85,33 @@ function DanceEventDetailPage() {
             <img
               src={imgSrc}
               alt={`${event.title} - 照片 ${index + 1}`}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover cursor-pointer"
+              onClick={() => setSelectedImg(imgSrc)}
               onError={(e) => { e.currentTarget.src = 'https://placehold.co/600x400/7f1d1d/fecaca?text=图片加载失败'; e.currentTarget.alt = '图片加载失败'; }}
             />
           </div>
         ))}
       </div>
+
+      {/* 全屏预览 */}
+      {selectedImg && (
+        <div
+          className="fixed inset-0 bg-black/90 flex items-center justify-center z-50"
+          onClick={() => setSelectedImg(null)}
+        >
+          <img
+            src={selectedImg}
+            alt="Full size"
+            className="max-h-[90%] max-w-[90%] object-contain"
+          />
+          <button
+            className="absolute top-4 right-4 text-white text-2xl"
+            onClick={() => setSelectedImg(null)}
+          >
+            ✕
+          </button>
+        </div>
+      )}
 
       <div className="text-center mt-12">
         <Link
