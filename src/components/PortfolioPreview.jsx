@@ -99,7 +99,7 @@ function PortfolioPreview() {
                     {/* Feature 3: Speech */}
                     <FeatureSection
                         icon={<Mic className="inline-block h-4 w-4 mr-1" />}
-                        title="Speech: Speak to be heard, voice to be felt"
+                        title="SPEECH: Speak to be heard, voice to be felt"
                         description=""
                         images={speechImages}
                         linkTo="/speeches"
