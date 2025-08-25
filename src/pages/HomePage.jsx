@@ -27,7 +27,7 @@ function HeroSection() {
             Hi, I am <span className="gradient-text">Zimeng Yan</span>
           </h1>
           <div className="mx-auto max-w-[700px] text-xl text-muted-foreground md:text-2xl min-h-[60px] md:min-h-[30px] " style={{ animationDelay: '0.3s' }}>
-            <TypeAnimation sequence={['Dancer', 1500, 'Artist', 1500, 'Gymnast', 1500, 'Pre-Med Student', 1500]} wrapper="span" speed={50} repeat={Infinity} className="font-semibold" />
+            <TypeAnimation sequence={['Dancer', 1500, 'Painter', 1500, 'Speaker', 1500, 'Doctor', 1500]} wrapper="span" speed={50} repeat={Infinity} className="font-semibold" />
           </div>
           <p className="max-w-[700px] text-muted-foreground text-base sm:text-lg md:text-xl " style={{ animationDelay: '0.5s' }}>
             Explore my dance moments, artistic creations and wonderful expressions.

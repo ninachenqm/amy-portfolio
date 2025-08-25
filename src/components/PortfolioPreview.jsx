@@ -63,7 +63,7 @@ export default function PortfolioPreview() {
                         A Glimpse into My Passions
                     </h2>
                     <p className="mt-4 text-muted-foreground text-lg">
-                        Discover the worlds of art, dance, and expression that I love to explore.
+                        Discover the worlds of art, dance, and speech that I love to explore.
                     </p>
                 </div>
 
@@ -73,7 +73,7 @@ export default function PortfolioPreview() {
                         <FeatureSection
                             icon={<Paintbrush className="inline-block h-5 w-5" />}
                             title="ART: Sketch the stress away"
-                            description="if u wanna add something here it will look like this "
+                            description="I have been painting since I was two. When I am at the easel, the world quiets—stress fades, and I slip into a world that is entirely mine!"
                             images={artImages}
                             linkTo="/art"
                             linkText="View Art Gallery"
@@ -86,7 +86,7 @@ export default function PortfolioPreview() {
                         <FeatureSection
                             icon={<Footprints className="inline-block h-5 w-5" />}
                             title="DANCE: Where passion meets the beat"
-                            description=""
+                            description="Since age five, I have chased flight with my feet, spun a baton across the sky, and felt the stands erupt around me!"
                             images={danceImages}
                             linkTo="/dance"
                             linkText="Explore Dance Showcase"
@@ -98,8 +98,8 @@ export default function PortfolioPreview() {
                     <section id="speeches" aria-label="Speeches preview" className="scroll-mt-28 md:scroll-mt-32">
                         <FeatureSection
                             icon={<Mic className="inline-block h-5 w-5" />}
-                            title="SPEECH: Speak to be heard, voice to be felt"
-                            description=""
+                            title="SPEECH: Speak. Listen. Grow—Together"
+                            description="Weekly family based speech club since 2014—TED-inspired talks, real-world practice, constructive feedback, lasting confidence!"
                             images={speechImages}
                             linkTo="/speeches"
                             linkText="See All Speeches"
