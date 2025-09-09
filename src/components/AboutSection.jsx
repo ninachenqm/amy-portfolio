@@ -10,7 +10,7 @@ function AboutSection() {
         </h2>
         <div className="max-w-3xl mx-auto">
           <p className="text-lg text-muted-foreground mb-4">
-            My ultimate goal is to become an ER physician or a psychiatrist focused on research. Driven by my passion for emergency medicine and a strong desire to help communities in need. I love seeing people smile, and I find it super heartwarming to witness communities come together and support each other. I also love exploring why people think and behave the way they do, and I’m especially interested in ethical and philosophical questions about human nature and decision making. This curiosity drove me deeper into understanding different perspectives and motivates my goal of combining medicine with empathy in my future career.
+            I aspire to become an ER physician or psychiatrist with a strong focus on research, driven by my passion for emergency care and my desire to serve communities in need. Nothing excites me more than seeing people smile and watching communities come together to support one another. I’m also fascinated by the human mind—why people think and behave the way they do—and drawn to the ethical and philosophical questions that shape our decisions. This curiosity fuels my pursuit of medicine, inspiring me to combine science with empathy to make a meaningful impact.
           </p>
 
         </div>

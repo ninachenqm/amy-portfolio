@@ -35,7 +35,7 @@ export const speechHighlightImages = [ // Added export in case you want to move 
 
 
 const speechesData = [
-  { id: 'speech141', date: '2025-05-03', topic: 'Sat Improvement Plan', source: 'Self Research', forum: 'Family Meeting', type: 'individual' },
+  { id: 'speech141', date: '2025-05-03', topic: 'SAT Improvement Plan', source: 'Self Research', forum: 'Family Meeting', type: 'individual' },
   { id: 'speech140', date: '2025-04-19', topic: 'NanoOne Bio', source: 'Self Research', forum: 'Family Meeting', type: 'individual' },
   { id: 'speech139', date: '2025-03-22', topic: 'Braver Than A Bee', source: 'Self Research', forum: 'Family Meeting', type: 'individual' },
   { id: 'speech138', date: '2025-03-09', topic: 'College Summariies', source: 'Self Research', forum: 'Family Meeting', type: 'individual' },
