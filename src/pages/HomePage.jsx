@@ -26,22 +26,11 @@ function HeroSection() {
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none " style={{ animationDelay: '0.1s' }}>
             Hi, I am <span className="gradient-text">Zimeng Yan</span>
           </h1>
-          <div className="mx-auto max-w-[700px] text-xl text-muted-foreground md:text-2xl min-h-[60px] md:min-h-[30px] " style={{ animationDelay: '0.3s' }}>
-            <TypeAnimation sequence={['Dancer', 1500, 'Painter', 1500, 'Speaker', 1500, 'Doctor', 1500]} wrapper="span" speed={50} repeat={Infinity} className="font-semibold" />
-          </div>
           <p className="max-w-[700px] text-muted-foreground text-base sm:text-lg md:text-xl " style={{ animationDelay: '0.5s' }}>
-            Explore my dance moments, artistic creations and wonderful expressions.
+            Art, motion and voice - a decade of practice, curiosity and care
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 mt-6 " style={{ animationDelay: '0.7s' }}>
-            <a href="#about" onClick={(e) => smoothScrollTo(e, 'about')} className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3 text-base font-medium text-primary-foreground shadow-lg transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
-              Explore more
-            </a>
-          </div>
           <div className="flex gap-4 mt-8 " style={{ animationDelay: '0.9s' }}>
-            <a href="mailto:amyyan189@gmail.com" className="flex items-center text-muted-foreground hover:text-primary transition-colors text-sm sm:text-base group" aria-label="Email Amy Yan at amyyan189@gmail.com">
-              <Mail className="h-5 w-5 sm:h-6 sm:w-6 mr-2 flex-shrink-0 transition-colors group-hover:text-primary" />
-              <span className="group-hover:text-primary transition-colors">amyyan189@gmail.com</span>
-            </a>
+            
           </div>
         </div>
       </div>
