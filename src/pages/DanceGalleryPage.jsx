@@ -37,7 +37,7 @@ function DanceGalleryPage() {
           <li>Solo State Championship</li>
           <li>Duo State Championship</li>
           <li>4 Community service parades</li>
-          <li>Practiced 585 days consecutively and made it on competition team</li>
+          <li>Practiced for 585 consecutive days, transforming from a novice into a core member of the competition team. </li>
         </ul>
       </div>
 
