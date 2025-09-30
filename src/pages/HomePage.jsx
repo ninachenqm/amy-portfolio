@@ -1,6 +1,5 @@
 // src/pages/HomePage.jsx
 import React, { useEffect } from 'react';
-import AboutSection from '../components/AboutSection';
 import ExperienceSection from '../components/ExperienceSection';
 import PortfolioPreview from '../components/PortfolioPreview';
 import { TypeAnimation } from 'react-type-animation';
@@ -57,10 +56,8 @@ function HomePage() {
   return (
     <div>
       <HeroSection />
-      <AboutSection />
 
-
-      {/* PortfolioPreview is assumed to include Art/Dance/Speeches content */}
+      {/* PortfolioPreview is assumed to include About me/Art/Dance/Speeches content */}
       <PortfolioPreview />
 
       {/* Ensure My Journey / Experiences is targetable */}

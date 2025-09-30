@@ -4,6 +4,12 @@ import { Link } from 'react-router-dom';
 import { Paintbrush, Mic, Footprints, ArrowRight } from 'lucide-react';
 import ImageCarousel from './ImageCarousel';
 
+const aboutMeImages = [
+    { src: '/Amy_dancing_pics/20240428_140635.jpg', alt: 'Dance 1' },
+    { src: '/Amy_dancing_pics/2022-04-24_14-04-10_691.jpeg', alt: 'Dance 2' },
+    { src: '/Amy_dancing_pics/2024-04-21_12-18-58_201.jpeg', alt: 'Dance 3' },
+];
+
 const artImages = [
     { src: '/Amy_drawings_pics/2025-01-20_13-02-10_388.jpeg', alt: 'Artwork 1' },
     { src: '/Amy_drawings_pics/2025-01-20_12-38-03_787 (2025-01-20T19_40_27.083).png', alt: 'Artwork 2' },
@@ -29,14 +35,18 @@ function FeatureSection({ icon, title, description, images, linkTo, linkText, im
                 {icon}{title}
             </h3>
             <p className="text-muted-foreground mb-6">{description}</p>
-            <div className={alignButtonRight ? 'md:text-right' : ''}>
-                <Link
-                    to={linkTo}
-                    className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
-                >
-                    {linkText} <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-            </div>
+
+            {/* render button only if both props are provided */}
+            {linkTo && linkText && (
+                <div className={alignButtonRight ? 'md:text-right' : ''}>
+                    <Link
+                        to={linkTo}
+                        className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
+                    >
+                        {linkText} <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                </div>
+            )}
         </div>
     );
 
@@ -54,6 +64,7 @@ function FeatureSection({ icon, title, description, images, linkTo, linkText, im
     );
 }
 
+
 export default function PortfolioPreview() {
     return (
         <section className="w-full py-16 md:py-24 lg:py-28 bg-background">
@@ -68,7 +79,20 @@ export default function PortfolioPreview() {
                 </div>
 
                 <div className="grid gap-20 md:gap-28">
-                    {/* Feature 1: Art */}
+
+                    {/* Feature 1: About me */}
+                    <section id="about" aria-label="Dance showcase preview" className="scroll-mt-28 md:scroll-mt-32">
+                        <FeatureSection
+                            icon={<Footprints className="inline-block h-5 w-5" />}
+                            title="About me"
+                            description="I aspire to become an ER physician or psychiatrist with a strong focus on research, driven by my passion for emergency care and my desire to serve communities in need. Nothing excites me more than seeing people smile and watching communities come together to support one another. I’m also fascinated by the human mind—why people think and behave the way they do—and drawn to the ethical and philosophical questions that shape our decisions. This curiosity fuels my pursuit of medicine, inspiring me to combine science with empathy to make a meaningful impact.
+          "
+                            images={aboutMeImages}
+                            imageFirst
+                        />
+                    </section>
+
+                    {/* Feature 2: Art */}
                     <section id="art" aria-label="Art gallery preview" className="scroll-mt-28 md:scroll-mt-32">
                         <FeatureSection
                             icon={<Paintbrush className="inline-block h-5 w-5" />}
@@ -81,7 +105,7 @@ export default function PortfolioPreview() {
                         />
                     </section>
 
-                    {/* Feature 2: Dance */}
+                    {/* Feature 3: Dance */}
                     <section id="dance" aria-label="Dance showcase preview" className="scroll-mt-28 md:scroll-mt-32">
                         <FeatureSection
                             icon={<Footprints className="inline-block h-5 w-5" />}
@@ -94,7 +118,7 @@ export default function PortfolioPreview() {
                         />
                     </section>
 
-                    {/* Feature 3: Speech */}
+                    {/* Feature 4: Speech */}
                     <section id="speeches" aria-label="Speeches preview" className="scroll-mt-28 md:scroll-mt-32">
                         <FeatureSection
                             icon={<Mic className="inline-block h-5 w-5" />}
