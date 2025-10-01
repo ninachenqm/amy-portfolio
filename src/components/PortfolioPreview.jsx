@@ -5,9 +5,7 @@ import { Paintbrush, Mic, Footprints, ArrowRight } from 'lucide-react';
 import ImageCarousel from './ImageCarousel';
 
 const aboutMeImages = [
-    { src: '/Amy_dancing_pics/20240428_140635.jpg', alt: 'Dance 1' },
-    { src: '/Amy_dancing_pics/2022-04-24_14-04-10_691.jpeg', alt: 'Dance 2' },
-    { src: '/Amy_dancing_pics/2024-04-21_12-18-58_201.jpeg', alt: 'Dance 3' },
+    { src: '/Amy_protfolio_pic.jpg', alt: 'A profile picture of Amy' },
 ];
 
 const artImages = [
@@ -50,16 +48,27 @@ function FeatureSection({ icon, title, description, images, linkTo, linkText, im
         </div>
     );
 
-    const imageCarousel = (
-        <div className="aspect-[4/3] w-full">
-            <ImageCarousel images={images} />
-        </div>
-    );
+    const imageDisplay =
+        images && images.length === 1 ? (
+            // If there is only one image, display it without carousel controls
+            <div className="w-full flex justify-center"> 
+                <img
+                    src={images[0].src}
+                    alt={images[0].alt}
+                    className="h-auto rounded-xl shadow-lg max-w-xs" 
+                />
+            </div>
+        ) : (
+            // If there are multiple images, use the carousel
+            <div className="aspect-[4/3] w-full">
+                <ImageCarousel images={images} />
+            </div>
+        );
 
     return (
         <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className={imageFirst ? 'md:order-last' : ''}>{content}</div>
-            <div>{imageCarousel}</div>
+            <div>{imageDisplay}</div>
         </div>
     );
 }
@@ -86,7 +95,7 @@ export default function PortfolioPreview() {
                             icon={<Footprints className="inline-block h-5 w-5" />}
                             title="About me"
                             description="I aspire to become an ER physician or psychiatrist with a strong focus on research, driven by my passion for emergency care and my desire to serve communities in need. Nothing excites me more than seeing people smile and watching communities come together to support one another. I’m also fascinated by the human mind—why people think and behave the way they do—and drawn to the ethical and philosophical questions that shape our decisions. This curiosity fuels my pursuit of medicine, inspiring me to combine science with empathy to make a meaningful impact.
-          "
+        "
                             images={aboutMeImages}
                             imageFirst
                         />
