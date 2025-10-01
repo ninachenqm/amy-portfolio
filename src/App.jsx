@@ -9,6 +9,7 @@ import ArtGalleryPage from './pages/ArtGalleryPage';
 import SpeechesPage from './pages/SpeechesPage';
 import DrawingDetailPage from './pages/DrawingDetailPage';
 import ScrollToTopButton from './components/ScrollToTopButton';
+import ScrollToTop from './components/ScrollToTop';
 import ExperiencesPage from './pages/ExperiencesPage';
 import WorkExperiencePage from './pages/WorkExperiencePage';
 
@@ -17,6 +18,7 @@ import WorkExperiencePage from './pages/WorkExperiencePage';
 function App() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
+      <ScrollToTop />
       <Navbar />
       <main className="flex-grow">
         <Routes>
