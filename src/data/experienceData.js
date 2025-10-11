@@ -62,14 +62,15 @@ export const experiencesData = [
     },
     {
         id: 'exp-tedx',
-        title: 'TEDx Community Organizer & Speaker',
-        organization: 'Local TEDx Initiative',
-        period: '2nd - 12th Grade',
+        title: 'Family Based Speech Club',
+        organization: 'Family and Community Connections',
+        period: '8th - 12th Grade',
         location: 'Community-based',
         descriptionPoints: [
-            'Co-hosted local TEDx events, inviting speakers from top-20 universities to share their ideas.',
-            'Delivered over 200 public speeches and actively participated in TEDx Youth events.',
-            'Contributed to a community program that has positively impacted over 100 families and 200 individuals.',
+            'Organize a weekly family speech club accommodating 2-5 families each week; 100+ families involved so far.',
+            'Watch and discuss TED talks for key learning. 500+ TED/TEDx talks learned so far.',
+            'Practice delivering speech with participants’ constructive feedback; guest speakers from top 20 universities. 300+ speeches delivered so far',
+            'Express gratitude with specific examples for family members.',
         ],
     },
     {
