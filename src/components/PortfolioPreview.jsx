@@ -132,7 +132,7 @@ export default function PortfolioPreview() {
                         <FeatureSection
                             icon={<Mic className="inline-block h-5 w-5" />}
                             title="SPEECH: Speak. Listen. Grow—Together"
-                            description="Weekly family based speech club since 2014—TED-inspired talks, real-world practice, constructive feedback, lasting confidence!"
+                            description="Weekly family based speech club since 2020 - Watch and discuss TED talks; deliver speeches; share constructive feedback; express gratitude through 360 appreciation. "
                             images={speechImages}
                             linkTo="/speeches"
                             linkText="See All Speeches"
