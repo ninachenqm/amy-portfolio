@@ -1,5 +1,6 @@
 import React from 'react';
-import { Mail } from 'lucide-react'; // Assuming 'lucide-react'
+import { Mail } from 'lucide-react'; 
+
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -8,7 +9,7 @@ function Footer() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            &copy; {currentYear} Zimeng Yan. All rights reserved.
+            &copy; {currentYear} Zimeng Yan. Weston, FL.
           </p>
           
           <a
