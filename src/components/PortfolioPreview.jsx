@@ -95,7 +95,7 @@ export default function PortfolioPreview() {
                             icon={<Footprints className="inline-block h-5 w-5" />}
                             title="About me"
                             description="I aspire to become an ER physician or psychiatrist with a strong focus on research, driven by my passion for emergency care and my desire to serve communities in need. Nothing excites me more than seeing people smile and watching communities come together to support one another. I’m also fascinated by the human mind—why people think and behave the way they do—and drawn to the ethical and philosophical questions that shape our decisions. This curiosity fuels my pursuit of medicine, inspiring me to combine science with empathy to make a meaningful impact.
-        "
+    "
                             images={aboutMeImages}
                             imageFirst
                         />

@@ -57,10 +57,10 @@ function HomePage() {
     <div>
       <HeroSection />
 
-      {/* PortfolioPreview is assumed to include About me/Art/Dance/Speeches content */}
+      {/* About me/Art/Dance/Speeches */}
       <PortfolioPreview />
 
-      {/* Ensure My Journey / Experiences is targetable */}
+      {/* My Journey / Experiences */}
       <section id="experiences" className="scroll-mt-24">
         <ExperienceSection />
       </section>
