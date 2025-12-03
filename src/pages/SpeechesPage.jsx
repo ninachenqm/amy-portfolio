@@ -7,29 +7,200 @@ import SpeechImageCarousel from '../components/SpeechImageCarousel';
 
 export const speechHighlightImages = [ // Added export in case you want to move it later
   {
+    src: '/Amy_speech_pics/20240802_141347.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
     src: '/Amy_speech_pics/2023-07-28_16-15-49_867.jpeg',
-    alt: 'Amy giving a speech 1',
-    caption: 'Presentation Moment 1 (Year)',
+    alt: 'Amy giving a speech',
   },
   {
     src: '/Amy_speech_pics/20190504_211328.jpeg',
-    alt: 'Amy giving a speech 2',
-    caption: 'Presentation Moment 2 (Year)',
-  },
-  {
-    src: '/Amy_speech_pics/20240802_141347.jpeg',
-    alt: 'Amy giving a speech 3',
-    caption: 'Presentation Moment 3 (Year)',
-  },
-  {
-    src: '/Amy_speech_pics/IMG_20170513_213621.jpeg',
-    alt: 'Amy giving a speech 4',
-    caption: 'Presentation Moment 4 (Year)',
+    alt: 'Amy giving a speech',
   },
   {
     src: '/Amy_speech_pics/IMG_20170917_203940.jpeg',
-    alt: 'Amy giving a speech 5',
-    caption: 'Presentation Moment 5 (Year)',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_20170513_213621.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_7489.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_7493.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_6310.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_6299.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_6295.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_6282.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_6276.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_6258.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_6204.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_6199.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_6134.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_6099.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_6098.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_6097.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_6096.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_6086.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_6084.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_5854.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_5853.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_5851.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_5736.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_5735.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_5733.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_5210.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_5201.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_5190.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_5179.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_5175.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_4165.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_3630.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_3374.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_2967.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_2963.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_2956.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_2912.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_2672.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_2662.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_2660.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_1983.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_1677.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_1650.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_1638.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_0817.jpeg',
+    alt: 'Amy giving a speech',
+  },
+  {
+    src: '/Amy_speech_pics/IMG_0696.jpeg',
+    alt: 'Amy giving a speech',
   },
 ];
 
