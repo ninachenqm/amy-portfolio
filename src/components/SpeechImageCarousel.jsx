@@ -112,21 +112,15 @@ export default function SpeechImageCarousel({ images }) {
         </div>
       )}
 
-      {/* (可选) 点状导航器 */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => {
-              setDirection(index > currentIndex ? 1 : -1);
-              setCurrentIndex(index);
-            }}
-            className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-colors ${
-              currentIndex === index ? 'bg-primary' : 'bg-white/50 hover:bg-white/80'
-            }`}
-            aria-label={`跳转到图片 ${index + 1}`}
-          />
-        ))}
+      {/* Position indicator */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10">
+        <div className="bg-black/60 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 shadow-lg">
+          <span className="text-white text-sm font-medium tracking-wide">
+            <span className="text-primary font-semibold">{currentIndex + 1}</span>
+            <span className="mx-1.5 text-white/70">/</span>
+            <span className="text-white/90">{images.length}</span>
+          </span>
+        </div>
       </div>
     </div>
   );

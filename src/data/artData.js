@@ -2,6 +2,16 @@
 // Shared artwork data for both ArtGalleryPage and DrawingDetailPage
 
 export const allArtworks = [
+  // Vintage Steam Locomotive
+  {
+    id: 'vintage-steam-locomotive',
+    title: 'Vintage Steam Locomotive',
+    year: 2025,
+    type: 'Oil',
+    imageUrl: '/Amy_drawings_pics/Retake-train.jpg',
+    materials: '',
+    description: 'A detailed painting of a powerful vintage steam locomotive and its red passenger carriages inside a grand train station. The artwork captures the nostalgic romance of steam travel, with billowing smoke and intricate mechanical details rendered with precision.',
+  },
   // Ketchup in progress
   {
     id: 'ketchup-in-progress',
